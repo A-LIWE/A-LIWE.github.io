@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Min Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+            <h1>Andreas Liderfors Westholm</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">Om mig</a></li>
+                <li><a href="#projects">Projekt</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Välkommen</h2>
+    </section>
+
+    <section id="about">
+        <div class="about-header">
+            <h2>Om Mig</h2>
+        </div>
+        <div class="text">
+            <p>2022 tog jag steget att sadla om från journalist till utvecklare. Jag har 2-årig utbildning som
+                frontendutvecklare men jag kan även titulera mig som fullstackutvecklare. Tillgänglighet och WCAG ligger
+                mig varmt om hjärtat.
+
+                —— Min drömarbetsplats —— 🌟
+                Som utvecklare söker jag framför allt en arbetsplats där jag kan växa och utvecklas. Jag tror starkt på
+                att lära genom att göra – där trial and error är en naturlig del av processen. Min idealiska arbetsplats
+                är en där det finns utrymme att experimentera, lära sig nya teknologier och ständigt utvecklas i rollen
+                som utvecklare.
+
+                —— Vad jag jobbar på just nu—— 💻
+                Jag utvecklar för närvarande en marknadsplats byggd i TypeScript med Next.js för frontend och Node.js
+                som backend. Jag använder GraphQL för API-hantering, PostgreSQL som databas och Tailwind CSS för
+                styling.
+
+                —— Vad jag studerar—— 📚
+                Jag läser Flutter på 50% via Stockholms Tekniska Institut, här får jag lära mig utveckla
+                plattformsoberoende applikationer. Just nu bygger vi en parkeringsapp.
+
+                —— Vad jag läser—— 📖
+                The Missing README: A Guide for the New Software Engineer. Lite av en handbok för nya utvecklare som tar
+                upp verkliga arbetsexempel och oskrivna regler för utvecklare.
+
+                Har du ett jobb du tror kan passa mig, eller vill du tipsa mig om något får du mer än gärna höra av dig
+                till mig.
+
+                Allt gott, Andreas.</p>
+        </div>
+        <div class="about-image">
+            <img src="images/proffebild-BK.jpeg" alt="Profilbild på Andreas Liderfors Westholm">
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projekt</h2>
+        <div class="project-container">
+            <div class="project">
+                <h3>Städa fint</h3>
+                <p>En webapplikation åt ett fiktivt städföretag. Byggdes under React kursen i min utbildning.</p>
+            </div>
+            <div class="project">
+                <h3>Projekt 2</h3>
+                <p>Beskrivning av projektet.</p>
+            </div>
+            <div class="project">
+                <h3>Projekt 3</h3>
+                <p>Beskrivning av projektet.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Kontakt</h2>
+
+
+        <div class="contact-links">
+            <a href="mailto:andreas.liderfors@gmail.com">andreas.liderfors@gmail.com</a>
+            <a href="https://www.linkedin.com/in/andreas-liderfors-westholm" target="_blank" class="linkedin-link">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://github.com/A-LIWE" target="_blank">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const elements = document.querySelectorAll(".fade-in");
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            elements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+
+</html>
