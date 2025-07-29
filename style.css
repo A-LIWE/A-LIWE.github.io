@@ -1,280 +1,376 @@
 /* Grundläggande stil */
 body {
-    background-color: #000;
-    color: #ddd;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    margin: 0;
-    padding: 0;
-    text-rendering: optimizeLegibility;
-    font-size: 16px;
+  background-color: #000;
+  color: #ddd;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 0;
+  padding: 0;
+  text-rendering: optimizeLegibility;
+  font-size: 16px;
 }
 
 /* Header */
 header {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.8);
-    padding: 1rem 2.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
-    box-sizing: border-box;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 1rem 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  box-sizing: border-box;
 }
 
 .header-content {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    margin: 0;
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0;
 }
 
 .profile-image-header {
-    width: 300px;
-    height: 390px;
-    border-radius: 8px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
+  width: 300px;
+  height: 390px;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
 }
 
 .profile-image-header img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 nav {
-    flex-grow: 1;
-    display: flex;
-    justify-content: flex-end;
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
 }
 
 nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 1.25rem;
-    flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
 }
 
 nav ul li {
-    margin: 0 1rem;
+  margin: 0 1rem;
 }
 
 nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.5rem;
-    transition: color 0.3s ease;
-    white-space: nowrap;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+  white-space: nowrap;
 }
 
 nav ul li a:hover {
-    color: #f39c12;
+  color: #f39c12;
 }
 
 /* Hero-sektion */
 .hero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    flex-direction: column;
-    padding: 1.25rem;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 1.25rem;
 }
 
 .hero h2 {
-    font-size: 5rem;
-    font-weight: bold;
-    color: #fff;
-    margin: 0;
+  font-size: 5rem;
+  font-weight: bold;
+  color: #fff;
+  margin: 0;
 }
 
 .hero p {
-    font-size: 1.375rem;
-    color: #aaa;
-    margin-top: 0.625rem;
+  font-size: 1.375rem;
+  color: #aaa;
+  margin-top: 0.625rem;
 }
 
 /* Fade-in animation */
 .fade-in {
-    opacity: 0;
-    transform: translateY(1.25rem);
-    transition: opacity 1s ease-out, transform 1s ease-out;
+  opacity: 0;
+  transform: translateY(1.25rem);
+  transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
 .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Sektioner */
 section {
-    padding: 5rem 1.25rem;
-    text-align: center;
+  padding: 5rem 1.25rem;
+  text-align: center;
 }
 
-#about {
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: left;
-    line-height: 1.8;
-    font-size: 1.25rem;
-    white-space: pre-line;
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
+.about-section {
+  max-width: 900px;
+  margin: 0 auto; /* Centrerar containern i mitten av sidan */
+  padding: 2rem; /* Lägger lite luft runt sektionen */
+  background-color: #000;
+  color: #fff;
+  text-align: left; /* Om du vill att texten ska ligga till vänster */
 }
 
-.about-header {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 1.25rem;
+/* Rubriken överst */
+.about-title {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  text-align: left;
 }
 
-.about-header h2 {
-    margin: 0;
-    font-size: 2.625rem;
+/* ========== Flexlayout för innehållet ========== */
+.about-content {
+  display: flex;
+  flex-direction: row; /* Text till vänster, bild till höger */
+  justify-content: space-between;
+  align-items: flex-start; /* Justera om du vill centrera vertikalt */
+  gap: 2rem; /* Mellanrum mellan text och bild */
 }
 
+/* Kolumnen med text */
+.about-text {
+  flex: 1; /* Ta upp så mycket plats som möjligt */
+  max-width: 600px; /* Exempel: sätt en maxbredd om du vill begränsa textens radlängd */
+  line-height: 1.6;
+}
+
+/* Kolumnen med bild */
 .about-image {
-    width: 300px;
-    height: 400px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 8px;
+  max-width: 300px; /* Bildens kolumn får en fast maxbredd */
+  flex-shrink: 0; /* Förhindra att kolumnen krymper under maxbredden */
 }
 
 .about-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-.text {
-    max-width: 800px;
-    font-size: 1.5rem;
+  width: 100%;
+  height: auto;
+  border-radius: 8px; /* Rundade hörn */
 }
 
 #projects {
-    background-color: #111;
-    padding: 5rem 1.25rem;
+  background-color: #111;
+  padding: 5rem 1.25rem;
 }
 
 #projects h2 {
-    font-size: 2.625rem;
+  font-size: 3rem;
 }
 
 .project-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1.25rem;
-    margin-top: 1.25rem;
-    font-size: 1.6rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+  font-size: 1.6rem;
 }
 
 .project {
-    background: #222;
-    padding: 1.25rem;
-    border-radius: 0.5rem;
-    width: 18.75rem;
-    transition: transform 0.3s ease, background 0.3s ease;
+  background: #222;
+  border-radius: 4px;
+  padding: 1rem;
+  width: 300px; /* Exempel: fast bredd */
+  text-align: center;
 }
 
-.project p{
- font-size: 1.5rem;   
+.project-link {
+  text-decoration: none; /* Tar bort understrykning på länken */
+  display: block; /* Gör att hela div:en blir klickbar */
+  color: #ddd;
+}
+
+.project-link:visited {
+  color: #ddd; /* Behåller samma färg efter besök */
+}
+
+.project p {
+  font-size: 1.5rem;
 }
 
 .project:hover {
-    transform: translateY(-0.3125rem);
-    background: #333;
+  transform: translateY(-0.3125rem);
+  background: #333;
+}
+
+.modal {
+  display: none; /* Dold tills vi klickar på "Mer info" */
+  position: fixed; /* Ligger ovanpå sidan */
+  z-index: 999; /* Låt modalen ligga över allt annat */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Scroll om innehållet är långt */
+  background-color: rgba(0, 0, 0, 0.6); /* Halvtransparent svart bakgrund */
+}
+
+/* Innehållet i modalen */
+.modal-content {
+  background-color: #2a2a2a; /* Mörkgrå bakgrund */
+  color: #f1f1f1;            /* Nästan vit text för bra kontrast */
+  margin: 10% auto;
+  padding: 2rem;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 8px;
+  position: relative;
+}
+
+/* Gör bilden mindre och responsiv inne i modalen */
+.modal-content img {
+  display: inline-block; /* centrera om du vill */
+  margin: 0 auto 1rem; /* lite luft under */
+  max-width: 600px; /* justera till den bredd du vill ha */
+  width: 100%; /* tar aldrig mer än max-width */
+  height: auto; /* behåll proportionerna */
+  border-radius: 4px; /* valfritt: mjuka hörn */
+}
+
+.modal-content p {
+  font-size: 1.25rem;   /* t.ex. 1.25rem = 20px */
+  line-height: 1.6;     /* bättre läsbarhet */
+  margin-bottom: 1rem;  /* lite luft under texten */
+}
+
+.modal-content h2 {
+  font-size: 2rem;      /* kan ändras till t.ex. 2.5rem eller 32px */
+  margin-bottom: 1rem;  /* lite mellanrum under rubriken */
+}
+
+.modal-content .modal-btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #ff8c00; /* DarkOrange */
+  color: #ffffff;            /* Vit text */
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.5rem;
+  transition: background 0.2s ease;
+  cursor: pointer;
+}
+
+/* Stängningsknappen (krysset) */
+.close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* När modalen är aktiv (vi lägger till en klass via JavaScript) */
+.modal.show {
+  display: block;
+}
+
+.open-modal {
+  margin-top: 1rem;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+.open-modal:hover {
+  background-color: #0056b3;
 }
 
 /* Kontaktsektion */
 #contact {
-    background-color: #000;
-    padding: 3.75rem 1.25rem;
+  background-color: #000;
+  padding: 3.75rem 1.25rem;
 }
 
 #contact h2 {
-    font-size: 2.625rem;
+  font-size: 3rem;
 }
 
-#contact p{
-    font-size: 1.5rem;
+#contact p {
+  font-size: 1.5rem;
 }
 
 #contact a {
-    color: #f39c12;
-    text-decoration: none;
-    font-size: 1.5rem;
+  color: #f39c12;
+  text-decoration: none;
+  font-size: 1.5rem;
 }
 
 #contact a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .contact-links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
 .contact-links a {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .contact-links i {
-    font-size: 1.8rem;
-    color: #f39c12;
+  font-size: 1.8rem;
+  color: #f39c12;
 }
 
 /* Responsiv design */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-        padding: 1rem 1.25rem;
-    }
-    
-    .header-content {
-        flex-direction: column;
-        align-items: center;
-    }
+  header {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem 1.25rem;
+  }
 
-    nav ul {
-        margin-top: 0.625rem;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .hero h2 {
-        font-size: 2.625rem;
-    }
+  nav ul {
+    margin-top: 0.625rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 
-    .hero p {
-        font-size: 1.25rem;
-    }
+  .hero h2 {
+    font-size: 2.625rem;
+  }
+
+  .hero p {
+    font-size: 1.25rem;
+  }
 }
