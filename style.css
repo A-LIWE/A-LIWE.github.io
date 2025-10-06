@@ -1,7 +1,7 @@
 /* Grundläggande stil */
 body {
-  background-color: #000;
-  color: #ddd;
+   background-color: #121212;
+  color: #F5F5F5;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   margin: 0;
@@ -10,25 +10,35 @@ body {
   font-size: 16px;
 }
 
+html {
+scroll-behavior: smooth;
+}
+
 /* Header */
 header {
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.8);
+  background: transparent;
   padding: 1rem 2.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 100;
   box-sizing: border-box;
+  transition: background-color 0.3s ease;
 }
 
 .header-content {
   display: flex;
   align-items: center;
   gap: 1.5rem;
+}
+
+header.scrolled {
+  background-color: #1A1A1ACC;
+  backdrop-filter: blur(8px); /* snygg glas-effekt (valfritt) */
 }
 
 h1 {
@@ -88,26 +98,52 @@ nav ul li a:hover {
 
 /* Hero-sektion */
 .hero {
+  position: relative;
   height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   text-align: center;
-  flex-direction: column;
-  padding: 1.25rem;
-}
-
-.hero h2 {
-  font-size: 5rem;
-  font-weight: bold;
   color: #fff;
-  margin: 0;
+  overflow: hidden;
 }
 
-.hero p {
-  font-size: 1.375rem;
-  color: #aaa;
-  margin-top: 0.625rem;
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* fyll hela skärmen */
+  z-index: -1;
+  filter: brightness(0.5); /* mörka ner videon för bättre textkontrast */
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+.hero-overlay h2 {
+  font-size: 6rem;
+  margin-bottom: 1rem;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #ff8c00;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition: background 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: #e67e22;
 }
 
 /* Fade-in animation */
@@ -126,13 +162,14 @@ nav ul li a:hover {
 section {
   padding: 5rem 1.25rem;
   text-align: center;
+  
 }
 
 .about-section {
   max-width: 1000px;
+  background-color: #121212;
   margin: 0 auto;
   padding: 4rem 2rem;      /* Mer luft runtom */
-  background-color: #000;
   color: #f0f0f0;          /* Något mjukare än ren vitt */
   text-align: left;
 }
@@ -141,7 +178,7 @@ section {
 
 /* Rubriken överst */
 .about-title {
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-size: 3rem;
   margin: 0 0 2rem;     /* lite luft under rubriken */
   text-align: center;   /* ← ändrat från flex-beteende */
 }
@@ -324,6 +361,52 @@ section {
 .open-modal:hover {
   background-color: #0056b3;
 }
+
+#cv {
+  padding: 4rem 2rem;
+  background-color: #111;
+  color: #fff;
+  text-align: center;
+}
+
+#cv h2 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.cv-content {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centrerar allt innehåll horisontellt */
+  gap: 1.5rem; /* luft mellan CV och knapp */
+}
+
+.cv-iframe {
+  width: 100%;
+  height: 600px; /* höjden kan du justera efter smak */
+  border: none;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.cv-btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #ff8c00;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition: background 0.3s ease;
+}
+
+.cv-btn:hover {
+  background-color: #e67e22;
+}
+
 
 /* Kontaktsektion */
 #contact {

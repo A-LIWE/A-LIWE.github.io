@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="sv">
 
+
+
+  
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +12,21 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const header = document.querySelector("header");
+    const hero = document.querySelector(".hero");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > hero.offsetHeight - 50) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    });
+  });
+</script>
 
 <body>
   <header>
@@ -22,19 +41,26 @@
   </header>
 
   <section class="hero">
+  <video autoplay muted loop playsinline poster="images/hero-fallback.png" class="hero-video">
+    <source src="videos/hero-bg.mp4" type="video/mp4">
+    Din webbläsare stödjer inte videouppspelning.
+  </video>
+  <div class="hero-overlay">
     <h2>Välkommen</h2>
-  </section>
+    <a href="#projects" class="hero-btn">Utforska mina projekt</a>
+  </div>
+</section>
 
   <section id="projects">
     <h2>Projekt</h2>
     <div class="project-container">
-      <!-- Projekt 1 -->
+     <!--   Projekt 1 
       <div class="project">
         <h3>Städa fint</h3>
         <p>En webapplikation byggd åt ett fiktivt städföretag.</p>
-        <!-- Knapp som öppnar modal 1 -->
+         Knapp som öppnar modal 1 
         <button class="open-modal" data-modal="modal-1">Mer info</button>
-      </div>
+      </div> -->
 
       <!-- Projekt 2 -->
       <div class="project">
@@ -62,20 +88,22 @@
   </section>
 
   <!-- Modal för "Städa fint" -->
-  <div id="modal-1" class="modal">
+  <!-- <div id="modal-1" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
       <h2>Städa fint</h2>
       <img src="images/stada-fint.png" alt="Städa fint-projektet" />
-      <p>Applikationen byggdes under React-kursen i min utbildning. Uppgiften var att bygga en responsiv startsida anpassad både för desktop och mobil åt ett fiktivt städföretag.
-        Som backend används google firebase. (tyngden i uppgiften låg i att designa en startsida, vänligen notera att alla knappar inte har en funktion)</p>
+      <p>Applikationen byggdes under React-kursen i min utbildning. Uppgiften var att bygga en responsiv startsida
+        anpassad både för desktop och mobil åt ett fiktivt städföretag.
+        Som backend används google firebase. (tyngden i uppgiften låg i att designa en startsida, vänligen notera att
+        alla knappar inte har en funktion)</p>
       <a href="https://a-liwe.github.io/stada-fint" target="_blank" rel="noopener">
         <button type="button" class="modal-btn">
           Besök projektet
         </button>
       </a>
     </div>
-  </div>
+  </div> -->
 
   <!-- Modal för "Projekt 2" -->
   <div id="modal-2" class="modal">
@@ -85,7 +113,7 @@
       <img src="images/dag-otto.png" alt="Projekt 2-bild" />
       <p>Chatboten använder sig av Open AI:s API och är byggd i Next.Js.
         För att få till Dag Ottos karaktär har jag instruerat modellen
-        att prata med talfel, samt slänga in lite klassiska repliker med jämla mellanrum.</p>
+        att prata med talfel, samt slänga in lite klassiska repliker med jämna mellanrum.</p>
       <a href="https://dag-otto-chatbot.vercel.app/" target="_blank" rel="noopener">
         <button type="button" class="modal-btn">
           Besök projektet
@@ -99,12 +127,14 @@
     <div class="modal-content">
       <span class="close">&times;</span>
       <h2>Parkeringsapp</h2>
-      <img src="images/under_construction.png" alt="Projekt 3-bild" />
-      <p>Håll till godo! <br> Här publiceras strax min parkeringsapp byggd för Android i Dart och med Flutter som ramverk. </p>
-      <!-- <a href="https://a-liwe.github.io/stada-fint" target="_blank" rel="noopener"> -->
+      <img src="images/parkera-fint.png" alt="Projekt 3-bild" />
+      <p>Parkera Fint! <br> En parkeringsapp byggd för Android och Ios i Dart med Flutter som
+        ramverk. För backend används firestore.</p>
+      <a href="https://flutter-parkingapp.web.app/" target="_blank" rel="noopener">
         <button type="button" class="modal-btn">
-          Alldeles snart
+          Besök projektet
         </button>
+      </a>
       <!-- </a> -->
     </div>
   </div>
@@ -124,6 +154,19 @@
       </a>
     </div>
   </div>
+
+  <section id="cv">
+  <h2>CV</h2>
+  <div class="cv-content">
+    <!-- Förhandsvisning av CV som bild -->
+    <img src="images/cv-preview.png" alt="Förhandsvisning av CV" class="cv-img" />
+
+    <!-- Nedladdningsknapp -->
+    <a href="cv/Andreas-Liderfors-CV.pdf" download class="cv-btn">
+      Ladda ner CV (PDF)
+    </a>
+  </div>
+</section>
 
   <section id="about" class="about-section">
 
